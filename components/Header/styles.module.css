@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -1em;
+  }
+  .search {
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius);
+    width: 18em;
+    height: 2.5em;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    color: var(--clr-black);
+  }
+  .material_icons {
+    padding: 0 0.2em;
+    font-size: 1.5em;
+    user-select: none;
+  }
+  .buscar{
+    border:none;
+  }
+  .buscar:focus{
+      outline:none;
+      border-color:white;
+    }
