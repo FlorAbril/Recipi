@@ -1,0 +1,86 @@
+.card {
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius);
+  padding: 1em;
+  border-top: 4px solid var(--clr-primary);
+  transition: box-shadow 200ms ease-in;         
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: 8px 8px var(--clr-primary);
+}
+
+.form-receta{
+  margin: 0;
+}
+
+.titulo{
+  margin-bottom: 0.2em;
+  margin-top: 0.5em;
+  height: 2em;
+  width: -webkit-fill-available;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size);
+  color: var(--clr-black);
+  border-radius: var(--border-radius);
+  border-width: 0.01em;
+
+}
+
+.titulo:focus{
+  outline: none;
+}
+
+.detalle{
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size);
+  color: var(--clr-black);
+  margin: 0px;
+  width: -webkit-fill-available;
+  resize: none;
+  min-height: 15em;
+  border-radius: var(--border-radius);
+  border-width: 0.01em;
+}
+
+.detalle:focus{
+  outline:none;
+
+}
+
+.form-options{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.2em;
+}
+
+
+.labels{
+  display: flex;
+  flex-direction: column;
+}
+  
+.botones{
+  display: flex;
+  flex-direction: row
+}
+
+.botones button{
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size);
+  color: var(--clr-black);
+  border-radius: var(--border-radius);
+  background-color: var(--clr-white);
+  margin-left: 0.2em;
+  border-width: thin;
+  cursor: pointer;
+  transition: background-color 0.2s
+}
+
+.botones button:hover{
+  background-color: var(--clr-background);
+
+}
+ 

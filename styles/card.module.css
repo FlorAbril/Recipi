@@ -1,0 +1,27 @@
+.card {
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius);
+    padding: 1em;
+    border-top: 4px solid var(--clr-primary);
+    transition: box-shadow 200ms ease-in;         
+    cursor: pointer;
+  }
+  .card:hover{
+    box-shadow: 8px 8px var(--clr-primary);
+  }
+  .card h2 {
+    margin-bottom: 0.2em;
+    margin-top: 0.5em;
+  }
+  p.date {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: -1em;
+  }
+  .detail {
+    margin: 0;
+    max-height: 15em;
+    overflow-y: auto;
+    word-break: break-word;
+  }

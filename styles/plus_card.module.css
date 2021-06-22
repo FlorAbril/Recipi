@@ -1,10 +1,4 @@
-.wrapper-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em,1fr));
-    grid-gap: 1.5em;
-  }
-
-  .container {
+.card {
     background-color: var(--clr-white);
     border-radius: var(--border-radius);
     padding: 1em;
@@ -19,7 +13,7 @@
     fill: var(--clr-primary);
     margin: auto
   }
-  .plus_container{
+  .plus_card{
     display: flex;
     align-items: center;
     border: none;
@@ -27,8 +21,7 @@
     transition: background-color 500ms ease-in;
   }
 
-  .plus_container:hover{
+  .plus_card:hover{
     background-color: var(--clr-white);
     box-shadow: none;
   }
-/* fin- boton añadir receta */
