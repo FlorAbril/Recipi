@@ -3,7 +3,13 @@
     justify-content: space-between;
     align-items: center;
     margin-top: -1em;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
   }
+  .header h1{
+    margin-right: 1em;
+  }
+
   .search {
     background-color: var(--clr-white);
     border-radius: var(--border-radius);
@@ -12,18 +18,33 @@
     padding: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: var(--clr-black);
   }
   .search_icon {
     width: 1.2em;
     padding: 0 0.2em;
     font-size: 1.5em;
-    user-select: none;
+    user-select: none; 
+    cursor: pointer;
   }
+
+  .search_icon:hover{
+    padding: 0 0.1em;
+  }
+
   .buscar{
     border:none;
+    margin-left: 0.3em;
   }
   .buscar:focus{
       outline:none;
       border-color:white;
+    }
+
+    @media screen and (max-width: 600px){
+      .search {
+          width: 100%;
+      }
+
     }

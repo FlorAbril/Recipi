@@ -7,8 +7,7 @@ import FormCard from './FormCard';
 export default function PanelRecetas(){
 return(<>
     <div className={styles['container']}>
-     <PlusCard/>
-      <FormCard></FormCard>
+      <PlusCard/>
       <Card></Card>
     </div>
 </>)
