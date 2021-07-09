@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/form_card.module.css'
 
 
-export default function FormCard({cancel}){
+export default function FormCard({cancel,save}){
+    const [formData, setFormData] = useState({title: '', detail:''})
 
-    const handleClick = () =>{
+    const handleChange = (e)=> {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+    const handleClick = () => cancel()
+
+    const handleSubmit = (e) =>{
+        save(e,formData)
         cancel()
     }
+
 return(<>
     <div className={`${styles['card']} ${styles['nueva-receta']}`}>
         <form className={styles['form-receta']}>
-            <input type="text" className={styles["titulo"]} placeholder="Título"/>
-            <textarea className={styles['detalle']} placeholder="Escribe algo..." required></textarea>
+            <input name="title" type="text" className={styles["titulo"]} placeholder="Título" value={formData['title']} onChange={handleChange}/>
+            <textarea name="detail" className={styles['detalle']} placeholder="Escribe algo..." value={formData['detail']} onChange={handleChange} required></textarea>
             <div className={styles["form-options"]} >
                 <select>
                     <option value="private">Privado</option>
                     <option value="public">Público</option>
                 </select>
                 <div className={styles["botones"]}>
-                    <button id="guardar" type="submit">Guardar</button>
+                    <button id="guardar" type="submit" onClick={handleSubmit}>Guardar</button>
                     <button id="cancelar" type="reset" onClick={handleClick}>Cancelar</button>
                 </div>
             </div>

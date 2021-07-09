@@ -2,13 +2,13 @@ import React from 'react';
 import styles from '../styles/panel_recetas.module.css'
 import PlusCard from './PlusCard';
 import Card from './Card';
-import recipes from '../server/recipesMock.json'
 
 
-export default function PanelRecetas(){
+
+export default function PanelRecetas({recipes, setRecipes}){
 return(<>
     <div className={styles['container']}>
-      <PlusCard/>
+      <PlusCard setRecipes={setRecipes}/>
      {
        recipes.map(recipe =><Card {...recipe} ></Card>)
      }
