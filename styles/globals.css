@@ -5,9 +5,9 @@ html,
 }
 
 :root {
-  --clr-background: #fff3cd;
-    --clr-white: hsl(0, 0%, 100%);
-    --clr-primary: #ff926b;
+  --clr-background: #9AB3F5;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-primary: #7579E7;
     --clr-black: black;
     --font-size: 16px;
     --border-radius: 0.2em;
