@@ -3,10 +3,13 @@ import styles from '../styles/form_card.module.css'
 
 
 export default function FormCard({cancel,save}){
-    const [formData, setFormData] = useState({title: '', detail:''})
+    const [formData, setFormData] = useState({title: '', detail:'', date:''})
 
+    
     const handleChange = (e)=> {
-        setFormData({...formData, [e.target.name]: e.target.value})
+        const date = new Date()
+        const formatDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
+        setFormData({...formData, [e.target.name]: e.target.value, date:formatDate})
     }
     const handleClick = () => cancel()
 

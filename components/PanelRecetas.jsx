@@ -10,7 +10,7 @@ return(<>
     <div className={styles['container']}>
       <PlusCard setRecipes={setRecipes}/>
      {
-       recipes.map(recipe =><Card {...recipe} ></Card>)
+       recipes.map(recipe =><Card key={recipe.id} {...recipe}></Card>)
      }
     </div>
 </>)

@@ -8,7 +8,7 @@ const [showForm, setShowForm] = useState(false)
 const handleCancel = () => setShowForm(!showForm)
 
 const handleSave = (e, formData) => {
-  setRecipes((prevRecipes) => [{...formData, date:'28/07/2020'} ,...prevRecipes ])
+  setRecipes((prevRecipes) => [{...formData} ,...prevRecipes ])
   e.preventDefault()
   
 }
