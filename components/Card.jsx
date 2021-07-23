@@ -6,7 +6,7 @@ export default function Card(props) {
   const {date,title,detail,id, ...rest} = props
   const router = useRouter()
   const handleClick = () => {
-    router.push(`/recipes/${id}`)
+    router.push(`/recipe/${id}`)
   }
 
   return (
