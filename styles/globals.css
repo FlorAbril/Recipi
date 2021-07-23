@@ -8,9 +8,10 @@ html,
   --clr-background: #9AB3F5;
   --clr-white: hsl(0, 0%, 100%);
   --clr-primary: #7579E7;
-    --clr-black: black;
-    --font-size: 16px;
-    --border-radius: 0.2em;
+  --clr-accent: #1a21e3;;
+  --clr-black: black;
+  --font-size: 16px;
+  --border-radius: 0.2em;
 }
 
 body {
@@ -21,8 +22,7 @@ body {
   background-color: var(--clr-background);
 }
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--clr-accent);
 }
 
 .wrapper-main {
