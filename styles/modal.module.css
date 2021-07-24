@@ -1,0 +1,30 @@
+.modal{
+    position: fixed;
+    z-index: 111;
+    top: 0;
+    left:0;
+    display: none;
+    width: 100%;
+    
+}
+
+.modal.is-open{
+    display: flex;
+}
+
+.modal-close{
+    width: 2em;
+    left: 0;
+    position: fixed;
+    cursor:pointer;
+}
+
+.modal-container{
+    width: 100%;
+    background-color: #3f4d71d1;
+    padding: 0em 2em 2em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
