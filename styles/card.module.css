@@ -26,3 +26,14 @@
     overflow-y: auto;
     word-break: break-word;
   }
+
+.card-modal{
+  height:100%;
+  width:80%;
+  margin-top: 2em;
+  transition: none; 
+}
+
+.card-modal:hover{
+  box-shadow: none;
+}

@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Card from '../../components/Card'
 import Link from 'next/link'
 
+
 const Recipe = ({ recipes }) => {
   const router = useRouter()
   const { id } = router.query

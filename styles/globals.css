@@ -21,8 +21,11 @@ body {
   color: var(--clr-black);
   background-color: var(--clr-background);
 }
-a {
-  color: var(--clr-accent);
+a{
+  color: white;
+}
+a:hover{
+  color: var(--clr-primary);
 }
 
 .wrapper-main {

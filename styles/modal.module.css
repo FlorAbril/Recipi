@@ -16,7 +16,18 @@
     width: 2em;
     left: 0;
     position: fixed;
-    cursor:pointer;
+    cursor: pointer;
+    background-color: var(--clr-background);
+    border: solid 1px var(--clr-primary);
+    border-radius: 0.2em;
+    color: var(--clr-primary);
+    transition: border-color 200ms ease-in;
+    transition: color 200ms ease-in;
+}
+
+.modal-close:hover{
+    color: white;
+    border-color: white;
 }
 
 .modal-container{
@@ -27,4 +38,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.modal a{
+    color: white;
+}
+.modal a:hover{
+    color: var(--clr-primary);
 }
