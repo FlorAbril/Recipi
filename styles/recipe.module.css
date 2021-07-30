@@ -1,0 +1,23 @@
+.container {
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius);
+    padding: 1em;
+    border-top: 4px solid var(--clr-primary);      
+    cursor: pointer;
+    margin: 1em;
+   
+}
+
+p.date {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: -1em;
+  }
+
+.detail {
+    margin: 0;
+    overflow-y: auto;
+    word-break: break-word;
+}
+

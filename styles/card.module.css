@@ -1,39 +1,52 @@
 .card {
-    background-color: var(--clr-white);
-    border-radius: var(--border-radius);
-    padding: 1em;
-    border-top: 4px solid var(--clr-primary);
-    transition: box-shadow 200ms ease-in;         
-    cursor: pointer;
-    min-height: 13em;
-  }
-  .card:hover{
-    box-shadow: 8px 8px var(--clr-primary);
-  }
-  .card h2 {
-    margin-bottom: 0.2em;
-    margin-top: 0.5em;
-  }
-  p.date {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: -1em;
-  }
-  .detail {
-    margin: 0;
-    max-height: 15em;
-    overflow-y: auto;
-    word-break: break-word;
-  }
-
-.card-modal{
-  height:100%;
-  width:80%;
-  margin-top: 2em;
-  transition: none; 
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius);
+  padding: 1em;
+  border-top: 4px solid var(--clr-primary);
+  transition: box-shadow 200ms ease-in;         
+  cursor: pointer;
+  min-height: 13em;
 }
 
-.card-modal:hover{
-  box-shadow: none;
+.card:hover{
+  box-shadow: 8px 8px var(--clr-primary);
+}
+
+.card h2 {
+  margin-bottom: 0.2em;
+  margin-top: 0.5em;
+}
+
+p.date {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: -1em;
+}
+
+.detail {
+  margin: 0;
+  overflow-y: auto;
+  word-break: break-word;
+  max-height: 10em;
+}
+
+.detail::-webkit-scrollbar{
+  width: 7px;
+  height: 7px;
+}
+
+.detail::-webkit-scrollbar-thumb{
+  background: #B3AFB3;
+  border-radius: 30px;
+}
+
+.detail::-webkit-scrollbar-thumb:hover{
+  background: #B3AFB3;
+}
+
+.detail::-webkit-scrollbar-track{
+  background: #F0F0F0;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
 }

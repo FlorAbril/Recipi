@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
-import Card from '../../components/Card'
 import Link from 'next/link'
-
+import styles from '../../styles/recipe.module.css'
 
 const Recipe = ({ recipes }) => {
   const router = useRouter()
@@ -9,16 +8,28 @@ const Recipe = ({ recipes }) => {
   const recipe = recipes.find(recipe => recipe.id === id)
 
   return <>
-	{recipe ? <>
-		<Card {...recipe} style={{'margin':'1.5rem', 'min-height': '85vh'}}/>
-	</> : <main style={{'margin': '1.5rem'}}> 
-		<h1>No existe esta receta</h1>
+	{recipe ? <> 
+		<Link href="/">
+			<a>
+				← Volver al inicio
+			</a>
+		</Link>
+		<div  className={styles['container']}>
+          <p className={styles['date']}>{recipe.date}</p>
+          <h2>{recipe.title}</h2>
+          <div className={styles['detail']} >
+            {recipe.detail.split('\n').map((p,i) => <p key={i}>{p}</p>)}
+          </div>
+    	</div>
+	</> 
+	: <main style={{'margin': '1.5rem'}}> 
+		<h1>No se pudo encontrar esta receta :(</h1>
 		<Link href="/">
 			<a>
 				Volver al inicio
 			</a>
 		</Link>
-	</main>}
+	   </main>}
 	</>
 }
 
