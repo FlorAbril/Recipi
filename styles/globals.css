@@ -30,5 +30,11 @@ a:hover{
 }
 
 .wrapper-main {
-  margin: 2em;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 450px){
+  .wrapper-main{
+    margin: 1rem;
+  }
 }
