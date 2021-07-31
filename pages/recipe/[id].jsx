@@ -10,7 +10,7 @@ const Recipe = ({ recipes }) => {
   return <>
 	{recipe ? <> 
 		<Link href="/">
-			<a>
+			<a style={{'margin-left':'1em'}}>
 				← Volver al inicio
 			</a>
 		</Link>
@@ -23,10 +23,10 @@ const Recipe = ({ recipes }) => {
     	</div>
 	</> 
 	: <main style={{'margin': '1.5rem'}}> 
-		<h1>No se pudo encontrar esta receta :(</h1>
+		<h3>No se pudo encontrar esta receta :(</h3>
 		<Link href="/">
 			<a>
-				Volver al inicio
+				← Volver al inicio
 			</a>
 		</Link>
 	   </main>}

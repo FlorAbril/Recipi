@@ -1,8 +1,16 @@
 import React from "react";
 import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
+  const router = useRouter()
+ 
+  const handleClick = () => {
+    router.push(`/trabajando`)
+
+  }
+
   return (
     <div className={styles.navbar}>
       <ul>
@@ -14,8 +22,8 @@ export default function Navbar() {
           </Link>
           
         </li>
-        <li>Más recetas</li>
-        <li>Perfil</li>
+        <li onClick={handleClick}>Más recetas</li>
+        <li onClick={handleClick}>Perfil</li>
       </ul>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/card.module.css'
 import { useRouter } from 'next/router'
-import Modal from "./Modal";
+
 
 export default function Card(props) {
   const {date,title,detail,id,...rest} = props
