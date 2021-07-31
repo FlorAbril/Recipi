@@ -32,8 +32,8 @@ return(<>
                     <option value="public">Público</option>
                 </select>
                 <div className={styles["botones"]}>
-                    <button id="guardar" type="submit" onClick={handleSubmit}>Guardar</button>
                     <button id="cancelar" type="reset" onClick={handleClick}>Cancelar</button>
+                    <button id="guardar" type="submit" onClick={handleSubmit}>Guardar</button>
                 </div>
             </div>
         </form>
