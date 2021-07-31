@@ -5,7 +5,9 @@
   border-top: 4px solid var(--clr-primary);
   transition: box-shadow 200ms ease-in;         
   cursor: pointer;
-  min-height: 13em;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover{
@@ -28,7 +30,6 @@ p.date {
   margin: 0;
   overflow-y: auto;
   word-break: break-word;
-  max-height: 10em;
 }
 
 .detail::-webkit-scrollbar{
