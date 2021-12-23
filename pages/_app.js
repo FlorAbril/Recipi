@@ -4,8 +4,9 @@ import Navbar from '../components/Navbar'
 import mockRecipes from '../server/recipesMock.json'
 import { useState } from 'react'
 
-function MyApp({ Component, pageProps }) {
-  const [recipes, setRecipes] = useState(mockRecipes)
+function MyApp({Component, pageProps}) {
+  const [recipes, setRecipes] = useState([])
+ 
   return <>
     <Head>
       <meta charSet="UTF-8"/>

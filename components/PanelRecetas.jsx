@@ -6,7 +6,6 @@ import Card from './Card';
 
 
 export default function PanelRecetas({recipes, setRecipes}){
-  console.log(styles['card-home'])
 return(<>
     <div className={styles['container']}>
       <PlusCard setRecipes={setRecipes}/>
