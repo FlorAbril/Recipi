@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import mockRecipes from '../server/recipesMock.json'
 import { useState } from 'react'
 
 function MyApp({Component, pageProps}) {

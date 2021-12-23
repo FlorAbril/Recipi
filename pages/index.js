@@ -4,16 +4,24 @@ import Header from '../components/Header'
 import Modal from '../components/Modal'
 import PanelRecetas from '../components/PanelRecetas'
 import { getAllRecipes } from '../server/notionApi'
+import { useRouter } from 'next/router'
 
 export default function Home({results, recipes, setRecipes}) {
   useEffect(function(){
     setRecipes(results)
 
   },[] )
+  const router = useRouter()
+ 
+  const handleClick = () => {
+    router.push(`/create`)
+
+  }
   return ( 
     <div> 
       <div className='wrapper-main'>
         <Header/> 
+        <img  onClick={handleClick} src='add.png' className={'add-img'} ></img>
         <PanelRecetas recipes={recipes} setRecipes={setRecipes}/>
       </div>
     </div>
