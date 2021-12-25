@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from '../styles/panel_recetas.module.css'
 import PlusCard from './PlusCard';
 import Card from './Card';
+import { RecipesContext } from '../store/recipesProvider';
 
 
 
-export default function PanelRecetas({recipes, setRecipes}){
+export default function PanelRecetas(){
+const {state} = useContext(RecipesContext)
+const {recipes} = state
+
 return(<>
     <div className={styles['container']}>
-      <PlusCard setRecipes={setRecipes}/>
+      <PlusCard/>
      {
-       recipes.map(recipe =><Card key={recipe.id} {...recipe}></Card>)
+       recipes?.map(recipe =><Card key={recipe.id} {...recipe}></Card>)
      }
     </div>
 </>)

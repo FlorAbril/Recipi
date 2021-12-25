@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { RecipesContext } from '../store/recipesProvider';
+import { ACTIONS } from '../store/RecipesReducer';
 import styles from '../styles/form_card.module.css'
 
 
-export default function FormCard({cancel,save}){
+export default function FormCard({cancel}){
+    const {dispatch} = useContext(RecipesContext)
     const [formData, setFormData] = useState(() => {
         const randomId= Math.random().toString(36).substring(7)
         const date = new Date()
         const formatDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
         return {id: randomId, date:formatDate, title: '', detail:''}
     })
-
     
     const handleChange = (e)=> {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
-    const handleClick = () => cancel()
 
     const handleSubmit = (e) =>{
-        save(e,formData)
+        dispatch({type: ACTIONS.addRecipe, payload: formData})
         cancel()
     }
 
@@ -32,8 +33,8 @@ return(<>
                     <option value="public">Público</option>
                 </select>
                 <div className={styles["botones"]}>
-                    <button id="cancelar" type="reset" onClick={handleClick}>Cancelar</button>
-                    <button id="guardar" type="submit" onClick={handleSubmit}>Guardar</button>
+                    <button id="cancelar" type="reset" onClick={()=>cancel()}>Cancelar</button>
+                    <button id="guardar" type="submit" onClick={()=>cancel()}>Guardar</button>
                 </div>
             </div>
         </form>

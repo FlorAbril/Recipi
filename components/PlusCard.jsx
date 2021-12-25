@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from '../styles/plus_card.module.css'
 import FormCard from './FormCard'
 
-export default function PlusCard({setRecipes}){
+export default function PlusCard(){
 const [showForm, setShowForm] = useState(false)
 
 const handleCancel = () => setShowForm(!showForm)
 
-const handleSave = (e, formData) => {
-  setRecipes((prevRecipes) => [{...formData} ,...prevRecipes ])
-  e.preventDefault()
-  
-}
-
 return(<>
-  {showForm ? <FormCard cancel={handleCancel} save={handleSave}></FormCard>
+  {showForm ? <FormCard cancel={handleCancel}></FormCard>
     : <div  onClick={handleCancel} className={`${styles.card} ${styles.plus_card}`} >
         <svg className={styles.plus_icon} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
       <path
