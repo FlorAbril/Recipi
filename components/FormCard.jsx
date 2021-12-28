@@ -23,6 +23,7 @@ export default function FormCard(){
     }
 
     const handleSubmit = (e) =>{
+        e.preventDefault()
         dispatch({type: ACTIONS.addRecipe, payload: formData})
         router.push(`/`)
     }
