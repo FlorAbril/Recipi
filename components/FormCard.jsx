@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { RecipesContext } from '../store/recipesProvider';
+import { RecipesContext } from '../store/RecipesProvider';
 import { ACTIONS } from '../store/RecipesReducer';
 import styles from '../styles/form_card.module.css'
 import { useRouter } from 'next/router';

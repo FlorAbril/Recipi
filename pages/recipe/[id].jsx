@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../../styles/recipe.module.css'
 import { useContext } from 'react'
-import { RecipesContext } from '../../store/recipesProvider'
+import { RecipesContext } from '../../store/RecipesProvider'
 
 const Recipe = () => {
   const router = useRouter()

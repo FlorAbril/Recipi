@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 import Header from '../components/Header'
 import PanelRecetas from '../components/PanelRecetas'
 import { getAllRecipes } from '../services/notionApi'
-import { RecipesContext } from '../store/recipesProvider'
+import { RecipesContext } from '../store/RecipesProvider'
 import { ACTIONS } from '../store/RecipesReducer'
 
 export default function Home({recipes}) {

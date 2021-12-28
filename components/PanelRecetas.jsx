@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styles from '../styles/panel_recetas.module.css'
 import PlusCard from './PlusCard';
 import Card from './Card';
-import { RecipesContext } from '../store/recipesProvider';
+import { RecipesContext } from '../store/RecipesProvider';
 
 
 
