@@ -1,10 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import { useContext, useEffect, useState } from 'react'
-import RecipesProvider, { RecipesContext } from '../store/recipesProvider'
-import { getAllRecipes } from '../server/notionApi'
-import { ACTIONS } from '../store/RecipesReducer'
+import RecipesProvider from '../store/recipesProvider'
 
 function MyApp({Component, pageProps}) {
  

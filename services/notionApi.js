@@ -19,7 +19,7 @@ export const getAllRecipes = async () => {
       )
   });
   }catch(error){  
-    console.log(error)    
+    console.log(error)
   }
   return recipes
 }

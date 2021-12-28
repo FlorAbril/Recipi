@@ -1,21 +1,16 @@
-import { createContext, useContext, useEffect } from 'react'
-import Card from '../components/Card'
+import { useContext, useEffect } from 'react'
 import Header from '../components/Header'
-import Modal from '../components/Modal'
 import PanelRecetas from '../components/PanelRecetas'
-import { getAllRecipes } from '../server/notionApi'
+import { getAllRecipes } from '../services/notionApi'
 import { useRouter } from 'next/router'
 import { RecipesContext } from '../store/recipesProvider'
 import { ACTIONS } from '../store/RecipesReducer'
 
-export default function Home() {
+export default function Home({recipes}) {
   const {dispatch} = useContext(RecipesContext)
-  console.log(useContext(RecipesContext))
 
   useEffect(function(){
-    getAllRecipes().then(recipes => {
-      dispatch({type: ACTIONS.addInitialRecipe, payload: recipes})
-    })
+    dispatch({type: ACTIONS.addInitialRecipe, payload: recipes})
   },[] )
 
   const router = useRouter()
@@ -35,22 +30,11 @@ export default function Home() {
 )
 }
 
-// export async function getStaticProps(){
-//   const results = await getAllRecipes()
-//   const recipes = []
-//   results.forEach(recipe => {
-//     recipes.push(
-//       {
-//         date: recipe.properties.Date.date.start,
-//         id: recipe.id,
-//         title: recipe.properties.Title.title[0].plain_text,
-//         detail: recipe.properties.Detail.rich_text[0].plain_text
-//       }
-//     )
-//   });
-//   return {
-//     props: {
-//         results : recipes
-//     }
-//   }
-// }
+export async function getStaticProps(){
+  const recipes = await getAllRecipes()
+  return {
+    props: {
+      recipes
+    }
+  }
+}
