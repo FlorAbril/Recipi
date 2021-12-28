@@ -1,16 +1,19 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../../styles/recipe.module.css'
+import { useContext } from 'react'
+import { RecipesContext } from '../../store/recipesProvider'
 
-const Recipe = ({ recipes }) => {
+const Recipe = () => {
   const router = useRouter()
+	const {state} = useContext(RecipesContext)
   const { id } = router.query
-  const recipe = recipes.find(recipe => recipe.id === id)
+  const recipe = state.recipes.find(recipe => recipe.id === id)
 
   return <>
 	{recipe ? <> 
 		<Link href="/">
-			<a style={{'margin-left':'1em'}}>
+			<a style={{'marginLeft':'1em'}}>
 				← Volver al inicio
 			</a>
 		</Link>
