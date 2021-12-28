@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Trabajando(){
     return(
-        <div style={{'padding-left':'1em'}}>
+        <div style={{'paddingLeft':'1em'}}>
             <h2>
                 🛠 Estamos trabajando en esta página, disculpe las molestias :)
             </h2>
