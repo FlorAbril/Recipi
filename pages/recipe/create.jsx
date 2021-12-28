@@ -1,4 +1,4 @@
-import styles from '../styles/form_card.module.css'
+import styles from '../../styles/form_card.module.css'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 
@@ -10,7 +10,6 @@ const Create = () => {
         return {id: randomId, date:formatDate, title: '', detail:''}
     })
     const router = useRouter()
-
     
     const handleChange = (e)=> {
         setFormData({...formData, [e.target.name]: e.target.value})
