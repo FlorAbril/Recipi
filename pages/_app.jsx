@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import RecipesProvider from '../store/recipesProvider'
+import RecipesProvider from '../store/RecipesProvider'
 
 function MyApp({Component, pageProps}) {
  
