@@ -7,10 +7,8 @@ import { useRouter } from 'next/router';
 export default function FormCard(){
     const {dispatch} = useContext(RecipesContext)
     const [formData, setFormData] = useState(() => {
-        const randomId= Math.random().toString(36).substring(7)
         const date = new Date()
-        const formatDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
-        return {id: randomId, date:formatDate, title: '', detail:''}
+        return {date, title: '', detail:''}
     })
     const router = useRouter()
 
@@ -24,7 +22,6 @@ export default function FormCard(){
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        dispatch({type: ACTIONS.addRecipe, payload: formData})
         router.push(`/`)
     }
 

@@ -9,7 +9,7 @@ export default function Home({recipes}) {
   const {dispatch} = useContext(RecipesContext)
 
   useEffect(function(){
-    dispatch({type: ACTIONS.addInitialRecipe, payload: recipes})
+    dispatch({type: ACTIONS.addInitialRecipe, payload: JSON.parse(recipes)})
   },[] )
 
   return ( 
@@ -26,7 +26,7 @@ export async function getStaticProps(){
   const recipes = await getAllRecipes()
   return {
     props: {
-      recipes
+      recipes: JSON.stringify(recipes)
     }
   }
 }
