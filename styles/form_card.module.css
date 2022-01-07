@@ -91,4 +91,10 @@
   background-color: var(--clr-background);
 
 }
+
+.error{
+  font-size: 0.8rem;
+  color: #f55a2e;
+  padding: 0.2em;
+}
  

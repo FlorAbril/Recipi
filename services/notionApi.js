@@ -23,8 +23,11 @@ export const getAllRecipes = async () => {
   return recipes
 }
 
-export const createRecipe = async ({title,detail,date}) => {
-  const formattedDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+export const createRecipe = async ({title,detail}) => {
+  const date = new Date()
+  //ISO 8601 date
+  const dateISO = date.toISOString()
+  const formattedDate = dateISO.substring(0,10)
   try{
     const response = await notion.pages.create({
       parent: {database_id: process.env.NOTION_DATABASE_ID},
@@ -57,6 +60,6 @@ export const createRecipe = async ({title,detail,date}) => {
     });
     return response
   }catch(error){
-    console.log(error)
+    return error
   }
 }

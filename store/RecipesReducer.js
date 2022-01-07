@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const ACTIONS = {
   addInitialRecipe: 'addInitialRecipe',
   addRecipe: 'ADD_RECIPE'
@@ -7,7 +9,7 @@ const initialState = {
   recipes: []
 }
 
-const recipesReducer = (state = initialState, action) => {
+const recipesReducer =  (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.addInitialRecipe:
       return {
@@ -15,10 +17,11 @@ const recipesReducer = (state = initialState, action) => {
         recipes: action.payload
       }
     case ACTIONS.addRecipe:
-      return {
-        ...state,
-        recipes: [...state.recipes, action.payload]
-      }
+        return {
+          ...state,
+          recipes: [...state.recipes, action.payload]
+        }
+      
     default:
       return state
   }

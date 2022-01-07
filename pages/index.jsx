@@ -8,8 +8,11 @@ import { ACTIONS } from '../store/RecipesReducer'
 export default function Home({recipes}) {
   const {dispatch} = useContext(RecipesContext)
 
-  useEffect(function(){
-    dispatch({type: ACTIONS.addInitialRecipe, payload: JSON.parse(recipes)})
+  useEffect(()=>{
+    const a = async () => {
+      await dispatch({type: ACTIONS.addInitialRecipe, payload: JSON.parse(recipes)})
+    }
+    a()
   },[] )
 
   return ( 
