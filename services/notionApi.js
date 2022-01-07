@@ -1,7 +1,6 @@
 import  { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-console.log("apikey",process.env.NOTION_API_KEY)
 
 export const getAllRecipes = async () => {
   const recipes = []
@@ -11,10 +10,10 @@ export const getAllRecipes = async () => {
     results.forEach(recipe => {
       recipes.push(
         {
-          date: recipe.properties.Date.date.start,
-          id: recipe.id,
-          title: recipe.properties.Title.title[0].plain_text,
-          detail: recipe.properties.Detail.rich_text[0].plain_text
+          date: recipe?.properties?.Date?.date?.start,
+          id: recipe?.id,
+          title: recipe?.properties?.Title?.title[0]?.plain_text,
+          detail: recipe?.properties?.Detail?.rich_text[0]?.plain_text
         }
       )
   });
@@ -22,4 +21,45 @@ export const getAllRecipes = async () => {
     console.log(error)
   }
   return recipes
+}
+
+export const createRecipe = async ({title,detail}) => {
+  const date = new Date()
+  //ISO 8601 date
+  const dateISO = date.toISOString()
+  const formattedDate = dateISO.substring(0,10)
+  try{
+    const response = await notion.pages.create({
+      parent: {database_id: process.env.NOTION_DATABASE_ID},
+      title,
+      properties: {
+        Title: {
+          title: [
+            {
+              text: {
+                content: title,
+              },
+            },
+          ],
+        },
+        Detail: {
+          rich_text: [
+                    {
+                      text: {
+                        content: detail,
+                      },
+                    },
+                  ],
+          },
+         Date: {
+            date: {
+              start: formattedDate
+            }
+          }
+      }
+    });
+    return response
+  }catch(error){
+    return error
+  }
 }
